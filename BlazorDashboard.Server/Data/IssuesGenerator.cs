@@ -29,6 +29,7 @@ namespace BlazorDashboard.Server.Data
                     if (rand.Next(0, 10) % rand.Next(1, 4) == 0)
                     {
                         currIssue.ClosedOn = currTime.AddDays(-rand.Next(0, rand.Next(0, i)));
+                        currIssue.IsOpen = false;
                     }
 
                     int type = rand.Next(0, 3);
