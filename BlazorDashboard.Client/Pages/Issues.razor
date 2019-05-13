@@ -7,6 +7,8 @@
 @using Telerik.Blazor.Components.Window
 @using Telerik.Blazor.Components.Button
 
+@inject HttpClient Http
+
 <div class="issues">
 	<TelerikGrid Data="@GridData" Pageable="true" PageSize="15" Sortable="true" Height="800">
 		<RowTemplate Context="issue">
@@ -67,7 +69,8 @@
 
 	private async Task LoadIssuesData()
 	{
-		GridData = await IssuesGenerator.GetIssues(DateTime.Now.AddMonths(-2));
+		string requestUrl = "api/Issues/GetIssues/?timeRange=" + DateTime.Now.AddMonths(-2).ToString("s");
+		GridData = await Http.GetJsonAsync<IEnumerable<Issue>>(requestUrl);
 	}
 
 	void ShowDetailsWindow()

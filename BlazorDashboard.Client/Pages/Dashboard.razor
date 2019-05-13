@@ -9,6 +9,8 @@
 @using Telerik.Blazor.Components.DropDownList
 @using System.Threading
 
+@inject HttpClient Http
+
 <div class="dashboard">
 	<div class="row mb-4">
 		<div class="col-sm">
@@ -154,7 +156,9 @@
 
 	private async Task LoadIssuesData()
 	{
-		IssuesList = await IssuesGenerator.GetIssues(IssuesFilter.GetRangeFromNumber(timeRange));
+		string requestUrl = "api/Issues/GetIssues/?timeRange=" + IssuesFilter.GetRangeFromNumber(timeRange).ToString("s");
+		IssuesList = await Http.GetJsonAsync<IEnumerable<Issue>>(requestUrl);
+
 		OpenIssues = IssuesFilter.GetOpenIssues(IssuesList);
 		ClosedIssues = IssuesFilter.GetClosedIssues(IssuesList);
 
