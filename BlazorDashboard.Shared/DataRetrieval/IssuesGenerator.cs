@@ -10,7 +10,7 @@ namespace BlazorDashboard.Shared.DataRetrieval
 	{
 		public static async Task<IEnumerable<Issue>> GetIssues(DateTime timeRange)
 		{
-			//in a real case this can be asynchronouse and would be calling an actual data endpoint. Here, we generate data "randomly"
+			//in a real case this can be asynchronous and would be calling an actual data endpoint. Here, we generate data "randomly"
 
 			DateTime currTime = DateTime.Now;
 			int daysToGenerateIssueFor = ((TimeSpan)(currTime - timeRange)).Days;
