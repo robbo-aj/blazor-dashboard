@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BlazorDashboard.Models;
+using BlazorDashboard.Shared.Models;
 
-namespace BlazorDashboard.DataRetrieval
+namespace BlazorDashboard.Shared.DataRetrieval
 {
 	public static class IssuesGenerator
 	{

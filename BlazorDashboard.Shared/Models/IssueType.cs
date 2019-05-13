@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorDashboard.Models
+namespace BlazorDashboard.Shared.Models
 {
-	public enum IssueSeverity
+	public enum IssueType
 	{
-		Low = 0,
-		Medium = 1,
-		High = 2
+		Bug = 0,
+		Feature = 1,
+		Enhancement = 2
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorDashboard.DataRetrieval
+namespace BlazorDashboard.Shared.DataRetrieval
 {
 	public static class LabelColors
 	{

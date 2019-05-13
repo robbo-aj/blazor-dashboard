@@ -1,10 +1,10 @@
-﻿using BlazorDashboard.Models;
+﻿using BlazorDashboard.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorDashboard.DataRetrieval
+namespace BlazorDashboard.Shared.DataRetrieval
 {
 	public static class IssuesFilter
 	{
