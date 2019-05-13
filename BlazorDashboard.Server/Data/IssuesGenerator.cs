@@ -15,6 +15,7 @@ namespace BlazorDashboard.Server.Data
             DateTime currTime = DateTime.Now;
             int daysToGenerateIssueFor = ((TimeSpan)(currTime - timeRange)).Days;
             List<Issue> issueList = new List<Issue>();
+            int issueId = 0;
 
             for (int i = daysToGenerateIssueFor; i >= 0; i--)
             {
@@ -22,7 +23,7 @@ namespace BlazorDashboard.Server.Data
                 {
                     Issue currIssue = new Issue();
 
-                    currIssue.Id = daysToGenerateIssueFor - i;
+                    currIssue.Id = ++issueId;
                     currIssue.Title = _dummyTitle.Substring(rand.Next(5, _dummyTitle.Length)) + currIssue.Id;
                     currIssue.CreatedOn = currTime.AddDays(-i);
                     if (rand.Next(0, 10) % rand.Next(1, 4) == 0)
